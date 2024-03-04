@@ -1,0 +1,174 @@
+:root {
+/* Primary */
+--purple: hsl(259, 100%, 65%);
+--light-red: hsl(0, 100%, 67%);
+/* Neutral */
+--White: hsl(0, 0%, 100%);
+--OffWhite: hsl(0, 0%, 94%);
+--LightGrey: hsl(0, 0%, 86%);
+--SmokeyGrey: hsl(0, 1%, 44%);
+--OffBlack: hsl(0, 0%, 8%);
+}
+
+
+@font-face {
+    font-family: "Poppins-italic";
+    src: url("assets/fonts/Poppins-Italic.ttf") format("truetype");
+}
+@font-face {
+    font-family: "Poppins-bold";
+    src: url("assets/fonts/Poppins-Bold.ttf") format("truetype");
+}
+@font-face {
+    font-family: "Poppins-extrabold-italic";
+    src: url("assets/fonts/Poppins-ExtraBoldItalic.ttf") format("truetype");
+}
+@font-face {
+    font-family: "Poppins-extrabold";
+    src: url("assets/fonts/Poppins-ExtraBold.ttf") format("truetype");
+}
+*, *:before, *:after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+
+body {
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+
+    background-color: var(--OffWhite);
+    color: var(--OffBlack);
+
+    font-family: "Poppins-bold";
+    font-size: 32px;
+}
+
+
+.main-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    min-height: 500px;
+    max-width: 35rem;
+    /* I have to put widht:100% because the max-width property was being ignored
+     by the display: flex; of the parent container */
+    width:100%;
+    margin-inline: 2rem;
+    padding:3rem 2rem;
+
+    border-radius: 1rem 1rem 10rem 1rem;
+
+    background-color: var(--White);
+}
+
+
+.dates {
+    display:flex;
+    justify-content: space-between;
+    gap: .5rem;
+    width: 70%;
+
+    label {
+        display:flex;
+        flex-direction: column;
+
+        color: var(--SmokeyGrey);
+    
+        font-size:.8rem;
+        letter-spacing: .1rem;
+    }
+
+    input {
+        max-width: 6rem;
+        padding: .5rem;
+    
+        border: solid 1px var(--LightGrey);
+        border-radius: .3rem; 
+    
+        font-family: "Poppins-extrabold";
+        font-size: 1rem;
+    }
+
+    small {
+        padding-top: .5rem;
+        color: var(--light-red);
+        font-size: 0.5rem;
+        font-family: "Poppins-italic";
+        letter-spacing: .01rem;
+    }
+}
+
+.hidden {
+    visibility: hidden;
+}
+
+
+
+/* To delete the input numbers decorators  */
+input[type=number]::-webkit-inner-spin-button, 
+input[type=number]::-webkit-outer-spin-button { 
+  -webkit-appearance: none; 
+  margin: 0; 
+}
+input[type=number] { 
+    -moz-appearance: textfield;  
+}
+
+
+.submit-block {
+    display: flex;
+    align-items: center;
+
+    hr {
+        width: 100%;
+        color: var(--OffWhite);;
+    }
+
+    button {
+        padding: .75rem;
+        border: none;
+        border-radius: 50%;
+        background-color: var(--purple);
+        cursor:pointer;
+    }
+
+    button:hover {
+        background-color: var(--OffBlack);
+    }
+}
+
+
+.result {
+    font-family: "Poppins-extrabold-italic";
+    font-size: 3rem;
+    .numbers {
+        color: var(--purple);
+    }
+}
+
+/* Media query for mobile */
+
+@media (width <= 500px) {
+
+    .dates {
+        margin-bottom: 2rem;
+    }
+    .submit-block {
+        position:relative;
+        padding: 2rem 0;
+
+        button {
+            position:absolute;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%, -50%);
+        }
+     
+    }
+
+}

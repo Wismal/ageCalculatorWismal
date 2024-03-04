@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Age calculator</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <main class="main-container">
+        <form>
+            <div class="dates">
+                <label>DAY
+                    <input type="number" name="day" id="day" min="1" placeholder="DD">
+                    <small class="hidden">----</small>
+                </label>
+                <label>MONTH
+                    <input type="number" name="month" id="month" placeholder="MM">
+                    <small class="hidden">----</small>
+                </label>
+                 <label>YEAR
+                    <input type="number" name="year" id="year" placeholder="YYYY">
+                    <small class="hidden">----</small>
+                </label>
+            </div>
+            <div class="submit-block">
+                <hr>
+                <!-- type="button" is neccessary because the text disappers if not -->
+                <button type="button" id="submitBtn"><img src="assets/images/icon-arrow.svg" alt="button"></button>
+            </div>
+        </form>
+        
+        <article class="result">
+            <p><span id="resultDays" class="numbers">--</span>days</p>
+            <p><span id="resultMonths" class="numbers">--</span>months</p>
+            <p><span id="resultYears" class="numbers">--</span>years</p>
+        </article>
+    </main>
+    <script src="script.js"></script>
+</body>
+</html>
